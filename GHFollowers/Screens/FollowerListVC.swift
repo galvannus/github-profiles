@@ -37,33 +37,22 @@ class FollowerListVC: UIViewController {
     }
 
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
 
-    func createThreeColumFlowLayout() -> UICollectionViewFlowLayout {
-        let width = view.bounds.width
-        let padding: CGFloat = 12
-        let minimunItemSpacing: CGFloat = 10
-        let availableWidth = width - (padding * 2) - (minimunItemSpacing * 2)
-        let itemWidth = availableWidth / 3
-
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
-
-        return flowLayout
-    }
-
     func getFollowers() {
-        NetWorkManager.shared.gerFollowers(for: userName, page: 1) { result in
+        NetWorkManager.shared.gerFollowers(for: userName, page: 1) { [weak self] result in
+
+            guard let self = self else { return }
 
             switch result {
             case let .success(followers):
                 self.followers = followers
                 self.updateData()
+
             case let .failure(error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -72,7 +61,9 @@ class FollowerListVC: UIViewController {
 
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
+            // Get cell configured
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            // Configuring each cell with follower
             cell.set(follower: follower)
 
             return cell
@@ -84,6 +75,5 @@ class FollowerListVC: UIViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
-        
     }
 }

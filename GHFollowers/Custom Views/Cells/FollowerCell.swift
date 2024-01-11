@@ -10,7 +10,7 @@ import UIKit
 class FollowerCell: UICollectionViewCell {
     static let reuseID = "FollowerCell"
 
-    let avatarImageView: UIImageView = GFAvatarImageView(frame: .zero)
+    let avatarImageView = GFAvatarImageView(frame: .zero)
     let userNameLabel: UILabel = GFTitleLabel(textAlignment: .center, fontSize: 16)
 
     override init(frame: CGRect) {
@@ -24,6 +24,7 @@ class FollowerCell: UICollectionViewCell {
 
     func set(follower: Follower) {
         userNameLabel.text = follower.login
+        avatarImageView.downloadImage(from: follower.avatarUrl)
     }
 
     private func configure() {

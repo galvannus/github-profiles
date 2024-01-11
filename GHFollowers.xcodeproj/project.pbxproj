@@ -26,6 +26,7 @@
 		0B97C6552B4711A40070CF0F /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97C6542B4711A40070CF0F /* ErrorMessage.swift */; };
 		0B97C6582B471CE80070CF0F /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97C6572B471CE80070CF0F /* FollowerCell.swift */; };
 		0B97C65A2B471DD90070CF0F /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97C6592B471DD90070CF0F /* GFAvatarImageView.swift */; };
+		0BB632112B4E322D00DB0E30 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB632102B4E322D00DB0E30 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0B97C6542B4711A40070CF0F /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		0B97C6572B471CE80070CF0F /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		0B97C6592B471DD90070CF0F /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		0BB632102B4E322D00DB0E30 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				0B97C6542B4711A40070CF0F /* ErrorMessage.swift */,
+				0BB632102B4E322D00DB0E30 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				0B79C33B2B44BA6D00132C44 /* SearchVC.swift in Sources */,
 				0B6FC5972B45BE7F000B34DC /* GFButton.swift in Sources */,
 				0B6FC5A32B45E56B000B34DC /* UIViewController+Ext.swift in Sources */,
+				0BB632112B4E322D00DB0E30 /* UIHelper.swift in Sources */,
 				0B97C65A2B471DD90070CF0F /* GFAvatarImageView.swift in Sources */,
 				0B79C33D2B44BA9B00132C44 /* FavoritesListVC.swift in Sources */,
 				0B6FC5A12B45D496000B34DC /* GFAlertVC.swift in Sources */,
