@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GHFollowers
 //
-//  Created by Jorge Alejndro Marcial Galvan on 04/01/24.
+//  Created by Jorge Alejndro Marcial Galvan on 13/01/24.
 //
 
 import Foundation
